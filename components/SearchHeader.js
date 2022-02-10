@@ -42,7 +42,7 @@ function SearchHeader() {
             ref={searchInputRef}
             className="flex-grow w-full dark:bg-[#202124] dark:caret-white dark:text-white focus:outline-none"
             type="text"
-            spellcheck="false"
+            spellCheck="false"
             defaultValue={router.query.term}
           />
 
