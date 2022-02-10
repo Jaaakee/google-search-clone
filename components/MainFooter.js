@@ -2,7 +2,7 @@ import { GlobeIcon } from '@heroicons/react/solid'
 
 function MainFooter() {
     return (
-        <footer className="dark:bg-[#171717] grid w-full divide-y-[1px] divide-gray-300 bg-gray-100 text-sm text-gray-500">
+        <footer className="dark:bg-[#171717] grid w-full divide-y-[1px] divide-gray-300 bg-gray-100 text-sm dark:text-gray-400 text-gray-500">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 grid-flow-row-dense px-8 py-3">
                 <div className="flex justify-center items-center md:col-span-2 lg:col-span-1 lg:col-start-2">
                     <GlobeIcon className="h-5 mr-1 text-green-700" />Carbon neutral since 2007
