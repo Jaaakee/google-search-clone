@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useRef } from "react";
 
 import Image from "next/image";
-import { MicrophoneIcon, SearchIcon, XIcon } from "@heroicons/react/solid";
+import { MicrophoneIcon, SearchIcon, ViewGridIcon, XIcon } from "@heroicons/react/solid";
 import Avatar from "./Avatar";
 import HeaderOptions from "./HeaderOptions";
 
@@ -51,7 +51,10 @@ function Header() {
           </button>
         </form>
 
-        <Avatar className="ml-auto" url="https://i.stack.imgur.com/34AD2.jpg" />
+        <div className="ml-auto flex items-center">
+          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 dark:fill-white dark:hover:bg-gray-600 cursor-pointer"/>
+          <Avatar url="https://i.stack.imgur.com/34AD2.jpg" />
+        </div>
       </div>
       
         {/* Header Options */}

@@ -11,7 +11,7 @@ import {
 
 function HeaderOptions() {
     return <div className="flex w-full text-gray-700 justify-evenly text-sm
-    lg:text-base lg:justify-start lg:space-x-36 lg:pl-52 border-b">
+    lg:text-base lg:justify-start lg:space-x-36 lg:pl-52 border-b border-gray-600">
         {/* Left */}
         <div className="flex space-x-6 dark:text-[#969ba1]">
             <HeaderOption Icon={SearchIcon} title="All" selected/>
