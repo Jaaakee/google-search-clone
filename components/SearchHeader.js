@@ -12,7 +12,7 @@ import Avatar from "./Avatar";
 import HeaderOptions from "./HeaderOptions";
 import { CogIcon } from "@heroicons/react/outline";
 
-function Header() {
+function SearchHeader() {
   const router = useRouter();
   const searchInputRef = useRef(null);
 
@@ -58,8 +58,8 @@ function Header() {
         </form>
 
         <div className="ml-auto flex items-center space-x-1">
-          <CogIcon className="h-10 w-10 p-2 rounded-full stroke-white hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer" />
-          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 dark:fill-white dark:hover:bg-gray-600 cursor-pointer" />
+          <CogIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 stroke-[#5f6368] dark:stroke-white dark:hover:bg-gray-600 cursor-pointer" />
+          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 fill-[#5f6368] dark:fill-white dark:hover:bg-gray-600 cursor-pointer" />
           <Avatar url="https://i.stack.imgur.com/34AD2.jpg" />
         </div>
       </div>
@@ -70,4 +70,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default SearchHeader;

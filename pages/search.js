@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "../components/Header";
+import SearchHeader from "../components/SearchHeader";
 import Response from "../Response"
 import { useRouter } from "next/router";
 import SearchResults from "../components/SearchResults";
@@ -15,7 +15,7 @@ function Search({ results }) {
       </Head>
 
       {/* Header */}
-      <Header />
+      <SearchHeader />
 
       {/* Search Results */}
       <SearchResults results={results} />

@@ -29,7 +29,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      {/* Header */}
+      {/* Main Header */}
       <header className="flex w-full p-3 justify-between text-small text-gray-700">
         {/* Left */}
         <div className="flex space-x-4 items-center">
@@ -43,7 +43,7 @@ export default function Home() {
           <p className="link dark:text-white">Images</p>
 
           {/* Icon */}
-          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 dark:fill-white  dark:hover:bg-gray-600 cursor-pointer"/>
+          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 fill-[#5f6368] dark:fill-white dark:hover:bg-gray-600 cursor-pointer"/>
 
           {/* Avatar */}
           <Avatar url="https://i.stack.imgur.com/34AD2.jpg"/>
@@ -62,7 +62,7 @@ export default function Home() {
         sm:max-w-xl lg:max-w-2xl">
           <SearchIcon className="h-5 mr-3 text-gray-500"/>
           <input ref={searchInputRef} type="text" className="flex-grow dark:bg-[#202124] dark:caret-white dark:text-white focus:outline-none" />
-          <MicrophoneIcon className="h-5 dark:fill-white "/>
+          <MicrophoneIcon className="h-5 text-blue-500 "/>
         </div>
 
         {/* Buttons */}
