@@ -2,11 +2,17 @@ import { useRouter } from "next/router";
 import { useRef } from "react";
 
 import Image from "next/image";
-import { MicrophoneIcon, SearchIcon, XIcon } from "@heroicons/react/solid";
+import {
+  MicrophoneIcon,
+  SearchIcon,
+  ViewGridIcon,
+  XIcon,
+} from "@heroicons/react/solid";
 import Avatar from "./Avatar";
 import HeaderOptions from "./HeaderOptions";
+import { CogIcon } from "@heroicons/react/outline";
 
-function Header() {
+function SearchHeader() {
   const router = useRouter();
   const searchInputRef = useRef(null);
 
@@ -21,7 +27,7 @@ function Header() {
   };
 
   return (
-    <header className="sticky top-0 bg-white">
+    <header className="sticky top-0 bg-white dark:bg-[#202124]">
       <div className="flex w-full p-6 items-center">
         <Image
           src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
@@ -34,7 +40,7 @@ function Header() {
         <form className="flex flex-grow px-6 py-3 ml-10 mr-5 border border-gray-200 rounded-full shadow-lg max-w-3xl items-center">
           <input
             ref={searchInputRef}
-            className="flex-grow w-full focus:outline-none"
+            className="flex-grow w-full dark:bg-[#202124] dark:caret-white dark:text-white focus:outline-none"
             type="text"
           />
 
@@ -51,13 +57,17 @@ function Header() {
           </button>
         </form>
 
-        <Avatar className="ml-auto" url="https://i.stack.imgur.com/34AD2.jpg" />
+        <div className="ml-auto flex items-center space-x-1">
+          <CogIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 stroke-[#5f6368] dark:stroke-white dark:hover:bg-gray-600 cursor-pointer" />
+          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 fill-[#5f6368] dark:fill-white dark:hover:bg-gray-600 cursor-pointer" />
+          <Avatar url="https://i.stack.imgur.com/34AD2.jpg" />
+        </div>
       </div>
-      
-        {/* Header Options */}
-        <HeaderOptions />
+
+      {/* Header Options */}
+      <HeaderOptions />
     </header>
   );
 }
 
-export default Header;
+export default SearchHeader;
