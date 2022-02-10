@@ -2,9 +2,15 @@ import { useRouter } from "next/router";
 import { useRef } from "react";
 
 import Image from "next/image";
-import { MicrophoneIcon, SearchIcon, ViewGridIcon, XIcon } from "@heroicons/react/solid";
+import {
+  MicrophoneIcon,
+  SearchIcon,
+  ViewGridIcon,
+  XIcon,
+} from "@heroicons/react/solid";
 import Avatar from "./Avatar";
 import HeaderOptions from "./HeaderOptions";
+import { CogIcon } from "@heroicons/react/outline";
 
 function Header() {
   const router = useRouter();
@@ -51,14 +57,15 @@ function Header() {
           </button>
         </form>
 
-        <div className="ml-auto flex items-center">
-          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 dark:fill-white dark:hover:bg-gray-600 cursor-pointer"/>
+        <div className="ml-auto flex items-center space-x-1">
+          <CogIcon className="h-10 w-10 p-2 rounded-full stroke-white hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer" />
+          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 dark:fill-white dark:hover:bg-gray-600 cursor-pointer" />
           <Avatar url="https://i.stack.imgur.com/34AD2.jpg" />
         </div>
       </div>
-      
-        {/* Header Options */}
-        <HeaderOptions />
+
+      {/* Header Options */}
+      <HeaderOptions />
     </header>
   );
 }
