@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { useRouter } from 'next/router'
 
 import Avatar from "../components/Avatar";
-import Footer from "../components/Footer";
+import MainFooter from "../components/MainFooter";
 import { MicrophoneIcon, ViewGridIcon } from '@heroicons/react/solid'
 import { SearchIcon } from '@heroicons/react/outline'
 
@@ -23,27 +23,27 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="dark:bg-[#202124] flex flex-col items-center justify-center h-screen">
       <Head>
         <title>Google</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
       {/* Header */}
-      <header className="flex w-full p-5 justify-between text-small text-gray-700">
+      <header className="flex w-full p-3 justify-between text-small text-gray-700">
         {/* Left */}
         <div className="flex space-x-4 items-center">
-          <p className="link">About</p>
-          <p className="link">Store</p>
+          <p className="link dark:text-white">About</p>
+          <p className="link dark:text-white">Store</p>
         </div>
 
         {/* Right */}
         <div className="flex space-x-4 items-center">
-          <p className="link">Gmail</p>
-          <p className="link">Images</p>
+          <p className="link dark:text-white">Gmail</p>
+          <p className="link dark:text-white">Images</p>
 
           {/* Icon */}
-          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer"/>
+          <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 dark:fill-white  dark:hover:bg-gray-600 cursor-pointer"/>
 
           {/* Avatar */}
           <Avatar url="https://i.stack.imgur.com/34AD2.jpg"/>
@@ -61,20 +61,19 @@ export default function Home() {
         rounded-full border border-gray-200 px-5 py-3 items-center
         sm:max-w-xl lg:max-w-2xl">
           <SearchIcon className="h-5 mr-3 text-gray-500"/>
-          <input ref={searchInputRef} type="text" className="flex-grow focus:outline-none" />
-          <MicrophoneIcon className="h-5"/>
+          <input ref={searchInputRef} type="text" className="flex-grow dark:bg-[#202124] dark:caret-white dark:text-white focus:outline-none" />
+          <MicrophoneIcon className="h-5 dark:fill-white "/>
         </div>
 
         {/* Buttons */}
         <div className="flex flex-col w-1/2 space-y-2 justify-center mt-8 sm:space-y-0 sm:flex-row sm:space-x-4">
-          <button onClick={search} className="btn">Google Search</button>
-          <button onClick={search} className="btn">I&apos;m Feeling Lucky</button>
+          <button onClick={search} className="btn dark:bg-[#303134] dark:text-white">Google Search</button>
+          <button onClick={search} className="btn dark:bg-[#303134] dark:text-white">I&apos;m Feeling Lucky</button>
         </div>
-
       </form>
 
       {/* Footer */}
-      <Footer />
+      <MainFooter />
     </div>
   )
 }

@@ -21,7 +21,7 @@ function Header() {
   };
 
   return (
-    <header className="sticky top-0 bg-white">
+    <header className="sticky top-0 bg-white dark:bg-[#202124]">
       <div className="flex w-full p-6 items-center">
         <Image
           src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
@@ -34,7 +34,7 @@ function Header() {
         <form className="flex flex-grow px-6 py-3 ml-10 mr-5 border border-gray-200 rounded-full shadow-lg max-w-3xl items-center">
           <input
             ref={searchInputRef}
-            className="flex-grow w-full focus:outline-none"
+            className="flex-grow w-full dark:bg-[#202124] dark:caret-white dark:text-white focus:outline-none"
             type="text"
           />
 

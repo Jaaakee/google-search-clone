@@ -3,13 +3,13 @@ import Header from "../components/Header";
 import Response from "../Response"
 import { useRouter } from "next/router";
 import SearchResults from "../components/SearchResults";
+import SearchFooter from "../components/SearchFooter";
 
 function Search({ results }) {
   const router = useRouter();
 
-  console.log(results);
   return (
-    <div>
+    <div className="dark:bg-[#202124]" >
       <Head>
         <title>{router.query.term} - Google Search</title>
       </Head>
@@ -19,6 +19,8 @@ function Search({ results }) {
 
       {/* Search Results */}
       <SearchResults results={results} />
+
+      <SearchFooter />
     </div>
   );
 }
