@@ -1,6 +1,11 @@
 import { useRouter } from "next/router";
 import { useRef } from "react";
 
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+
+import Avatar from "./Avatar";
+import HeaderOptions from "./HeaderOptions";
+
 import Image from "next/image";
 import {
   MicrophoneIcon,
@@ -8,13 +13,13 @@ import {
   ViewGridIcon,
   XIcon,
 } from "@heroicons/react/solid";
-import Avatar from "./Avatar";
-import HeaderOptions from "./HeaderOptions";
 import { CogIcon } from "@heroicons/react/outline";
 
 function SearchHeader() {
   const router = useRouter();
   const searchInputRef = useRef(null);
+
+  const { transcript } = useSpeechRecognition();
 
   const search = (e) => {
     e.preventDefault();
@@ -43,7 +48,8 @@ function SearchHeader() {
             className="flex-grow w-full dark:bg-[#202124] dark:caret-white dark:text-white focus:outline-none"
             type="text"
             spellCheck="false"
-            defaultValue={router.query.term}
+            defaultValue={transcript ? transcript : router.query.term}
+            key={`transcript:${transcript}`}
           />
 
           <XIcon
@@ -52,11 +58,8 @@ function SearchHeader() {
             onClick={() => (searchInputRef.current.value = "")}
           />
 
-          <MicrophoneIcon className="mr-3 h-6 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300" />
-          <SearchIcon className="h-6 text-blue-500 hidden sm:inline-flex" />
-          <button hidden type="submit" onClick={search}>
-            Search
-          </button>
+          <MicrophoneIcon onClick={SpeechRecognition.startListening} className="mr-3 h-6 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300 cursor-pointer transition duration-150 transform hover:scale-110" />
+          <SearchIcon onClick={search} className="h-6 text-blue-500 hidden sm:inline-flex cursor-pointer transition duration-150 transform hover:scale-110" />
         </form>
 
         <div className="ml-auto flex items-center space-x-1">
