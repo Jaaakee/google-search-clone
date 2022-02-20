@@ -1,4 +1,4 @@
-# Google Sarch Clone
+# Google Search Clone
 
 Created with [**Next.js**](https://nextjs.org/) and [**Tailwind CSS**](https://tailwindcss.com/). This project features a **responsive design**, **react server-side rendering (SSR)**, and **pagination**.
 
