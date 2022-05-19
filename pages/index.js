@@ -37,7 +37,9 @@ export default function Home() {
       <header className="flex w-full p-2 pl-6 justify-between text-sm text-gray-700">
         {/* Left */}
         <div className="flex space-x-4 items-center">
-          <p className="link dark:text-white">About</p>
+          <a href="https://github.com/jakeva/google-search-clone">
+            <p className="link dark:text-white">About</p>
+          </a>
           <p className="link dark:text-white">Store</p>
         </div>
 
