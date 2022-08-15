@@ -22,4 +22,4 @@ yarn dev
 Any contributions are welcome. Please create a pull request and describe your changes thoroughly.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[Unlicense](https://choosealicense.com/licenses/unlicense/)
